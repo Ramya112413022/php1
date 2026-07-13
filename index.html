@@ -1,0 +1,48 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $name = $_POST["name"];
+    $department = $_POST["department"];
+    $agree = isset($_POST["agree"]) ? "Yes" : "No";
+
+    echo "<h2>Submitted Details</h2>";
+    echo "Name: " . htmlspecialchars($name) . "<br>";
+    echo "Department: " . htmlspecialchars($department) . "<br>";
+    echo "Terms Accepted: " . $agree . "<br><hr>";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP Form Example</title>
+</head>
+<body>
+
+<h2>User Form</h2>
+
+<form method="post" action="">
+
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Department:</label><br>
+    <select name="department">
+        <option value="">--Select Department--</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Information Technology">Information Technology</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Mechanical">Mechanical</option>
+    </select><br><br>
+
+    <label>
+        <input type="checkbox" name="agree">
+        I accept the terms and conditions
+    </label><br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>
